@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Horse Racing</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            Racing! <button id="startRaceButton" class="btn btn-primary">Start!</button>
+        </h1>
+        <hr>
+        <div>
+            <h2 id="winnerName" class="text-muted">The winner name</h2>
+            <div id="winnerImage"></div>
+        </div>
+    </div>
+</body>
+
+<style>
+    #winnerImage {
+        background-color: #aaa;
+        background-position: center;
+        -webkit-background-size:cover;
+        background-size:contain; ;
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 400px;
+        border-radius: 15px;
+    }
+</style>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="race.js"></script>
+<script>
+    $(document).ready(function () {
+
+        var race = new Race();
+
+        var horses = [
+            {name: 'StormWind', url: 'horses/stormwind.json'},
+            {name: 'Jasmine', url: 'horses/jasmine.json'},
+            {name: 'Scotty', url: 'horses/scotty.json'},
+            {name: 'Puffy', url: 'horses/puffy.json'}
+        ];
+
+        var $raceStartButton = $('#startRaceButton');
+        var $winnerName      = $('#winnerName');
+        var $winnerImage     = $('#winnerImage');
+
+        $raceStartButton.on('click', function () {
+            race.start(horses).then(function (winner) {
+                $winnerName.text(winner.name);
+                $winnerImage.css({
+                    'background-image': 'url(' + winner.image + ')'
+                });
+            });
+        });
+    })
+</script>
+</html>
