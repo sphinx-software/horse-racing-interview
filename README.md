@@ -15,4 +15,5 @@ How do you make a race? **Please write the race.js to make it work**
 *Please see the `index.html` for more detail.*
  
 *We already have a `bower.json` file that setup with jQuery & bootstrap already. So just use them freely, and if you need other library? No problem, just `bower install` them.*
-*Googling is allowed! yay!*
+
+*Googling is allowed! yay! :heart:* 
