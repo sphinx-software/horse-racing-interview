@@ -12,7 +12,7 @@ How do you make a race? **Please write some codes to the `src/race.js` file to m
 
 ---
 
-*Please see the `index.html` for more detail.*
+*Please see the `src/App.js` for more detail.*
  
 *We are using ReactJS for this project. Please feel free to add any other library if needed*
 
