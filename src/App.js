@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import race from "./race";
@@ -18,39 +18,39 @@ class Winner extends Component {
 
 class App extends Component {
 
-  state = {
-      winner: null
+    state = {
+        winner: null
 
-  };
+    };
 
-  horses = [
-      {name: 'StormWind', url: 'horses/stormwind.json'},
-      {name: 'Jasmine', url: 'horses/jasmine.json'},
-      {name: 'Scotty', url: 'horses/scotty.json'},
-      {name: 'Puffy', url: 'horses/puffy.json'}
-  ];
+    horses = [
+        {name: 'StormWind', url: 'horses/stormwind.json'},
+        {name: 'Jasmine', url: 'horses/jasmine.json'},
+        {name: 'Scotty', url: 'horses/scotty.json'},
+        {name: 'Puffy', url: 'horses/puffy.json'}
+    ];
 
 
-  async startRace() {
-      this.setState({
-        winner: await race(this.horses)
-    });
-  }
+    async startRace() {
+        this.setState({
+            winner: await race(this.horses)
+        });
+    }
 
-  render() {
+    render() {
 
-      const winner = this.state.winner;
+        const winner = this.state.winner;
 
-      return (
-          <div className='container-fluid'>
+        return (
+            <div className='container-fluid'>
 
-              <h1>Horse Racing App</h1>
+                <h1>Horse Racing App</h1>
 
-              <button className='btn btn-primary' onClick={this.startRace.bind(this)}>Start race</button>
-              <Winner horse={winner}/>
-          </div>
-      );
-  }
+                <button className='btn btn-primary' onClick={this.startRace.bind(this)}>Start race</button>
+                <Winner horse={winner}/>
+            </div>
+        );
+    }
 }
 
 export default App;
