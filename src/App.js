@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import race from "./race";
 
-
 class Winner extends Component {
     render() {
         const horse = this.props.horse;
@@ -40,17 +39,17 @@ class App extends Component {
 
   render() {
 
-    const winner = this.state.winner;
+      const winner = this.state.winner;
 
-    return (
-      <div className='container-fluid'>
+      return (
+          <div className='container-fluid'>
 
-        <h1>Horse Racing App</h1>
+              <h1>Horse Racing App</h1>
 
-        <button className='btn btn-primary' onClick={this.startRace.bind(this)}>Start race</button>
-        <Winner horse={winner}/>
-      </div>
-    );
+              <button className='btn btn-primary' onClick={this.startRace.bind(this)}>Start race</button>
+              <Winner horse={winner}/>
+          </div>
+      );
   }
 }
 

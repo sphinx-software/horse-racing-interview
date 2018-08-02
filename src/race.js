@@ -3,4 +3,3 @@ const race = async (horses) => {
 };
 
 export default race;
-
