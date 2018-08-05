@@ -2,7 +2,7 @@
 
 We have 4 horses: `Jasmine`, `Puffy`, `Scotty` and `Stormwind`.
 
-They run by ajax to the related JSON files.
+They run by making AJAX request to the related JSON files.
 
 And now, we'll host a race between them.
 
